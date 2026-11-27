@@ -41,13 +41,6 @@ p{margin:0}
 .in .sw,.sw.in{opacity:1;filter:none;transform:none}
 .rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
 .rv.in{opacity:1;transform:none;filter:none}
-/* splash */
-#splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#2f7a54,#13281d 72%);transition:opacity .6s,visibility .6s;cursor:pointer}
-#splash.out{opacity:0;visibility:hidden}
-.sp{text-align:center}.sp .ring{width:210px;height:210px;border-radius:50%;border:1px solid rgba(52,211,153,.4);display:grid;place-items:center;margin:0 auto}
-.sp img{width:160px;animation:bob 2.4s ease-in-out infinite}
-.letters{font-weight:800;font-size:32px;margin-top:16px}.letters span{display:inline-block;opacity:0;transform:translateY(14px);animation:up .5s forwards}
-.sp small{display:block;color:var(--mute);margin-top:4px}
 @keyframes up{to{opacity:1;transform:none}}@keyframes bob{50%{transform:translateY(-10px)}}
 /* nav */
 .nav-w{position:fixed;top:14px;left:0;right:0;z-index:50;padding:0 max(5vw,18px)}
@@ -71,7 +64,7 @@ p{margin:0}
 .bars{position:absolute;left:0;right:0;bottom:0;height:260px;display:flex;align-items:flex-end;gap:10px;padding:0 2vw;pointer-events:none;mask-image:linear-gradient(90deg,#000 0,#000 20%,transparent 38%,transparent 62%,#000 80%)}
 .bars i{flex:1;background:linear-gradient(180deg,rgba(52,211,153,.55),rgba(52,211,153,.08));border-radius:6px 6px 0 0;height:0;transition:height 1.6s cubic-bezier(.2,.8,.2,1)}
 .trend{position:absolute;left:0;right:0;top:44%;width:100%;height:300px;pointer-events:none}
-.trend path{fill:none;stroke:rgba(255,255,255,.75);stroke-width:2;stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.2s .8s ease forwards;filter:drop-shadow(0 0 6px rgba(255,255,255,.5))}
+.trend path{fill:none;stroke:rgba(255,255,255,.75);stroke-width:2;stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.2s .2s ease forwards;filter:drop-shadow(0 0 6px rgba(255,255,255,.5))}
 @keyframes draw{to{stroke-dashoffset:0}}
 .hstage{position:relative;height:440px;max-width:760px;margin:26px auto 0}
 .phone{position:absolute;left:50%;transform:translateX(-50%);top:0;width:260px;height:520px;border-radius:42px;background:#0c1712;padding:9px;box-shadow:0 0 0 2px #31503f,0 40px 80px -30px rgba(0,0,0,.7)}
@@ -94,8 +87,8 @@ p{margin:0}
 .toast2{position:absolute;left:0;top:60px;width:210px;background:#fff;color:#13241a;border-radius:16px;padding:11px 13px;font-size:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:flex;gap:10px;align-items:center;animation:bob 4.4s ease-in-out infinite;animation-delay:-2s}
 .toast2 small{display:block;color:#6b776f;font-size:11px}
 .ti{width:32px;height:32px;border-radius:10px;flex:none;background:linear-gradient(145deg,#6ee7b7,#059669);display:grid;place-items:center;color:#fff;font-weight:800}
-.wave-m{position:absolute;left:calc(50% - 300px);bottom:-30px;width:250px;z-index:4;filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));animation:peek 1.2s 1.4s cubic-bezier(.2,.9,.3,1.2) both}
-.wave-m img{animation:hand 2.8s 2.6s ease-in-out infinite;transform-origin:70% 90%}
+.wave-m{position:absolute;left:calc(50% - 300px);bottom:-30px;width:250px;z-index:4;filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));animation:peek 1.2s .4s cubic-bezier(.2,.9,.3,1.2) both}
+.wave-m img{animation:hand 2.8s 1.6s ease-in-out infinite;transform-origin:70% 90%}
 @keyframes peek{from{transform:translateY(160px)}to{transform:none}}
 @keyframes hand{0%,100%{transform:rotate(0)}20%{transform:rotate(-6deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-3deg)}}
 @media(max-width:760px){.resumo{right:-6px;top:auto;bottom:30px;width:170px;padding:10px;font-size:11px}.toast2{left:12px;top:-8px;width:176px;z-index:5}.wave-m{left:-46px;width:140px;bottom:-6px}.hstage{height:470px}.bars{gap:5px;height:160px}}
@@ -262,7 +255,6 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 <symbol id="snd" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2.5-6.5z" fill="#0b2318"/></symbol>
 </defs></svg>
 
-<div id="splash" aria-hidden="true"><div class="sp"><div class="ring"><img src="download.webp" alt=""></div><div class="letters" id="letters"></div><small>Organizando seu dinheiro…</small></div></div>
 
 <div class="nav-w"><nav class="nav" id="nav" aria-label="Principal">
   <a class="logo" href="#topo"><svg width="32" height="32"><use href="#lg"/></svg><span>Dinn<b>Zap</b></span></a>
@@ -295,7 +287,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
       <div class="r"><span>Saldo</span><b style="color:var(--seta)" data-count="12116.47" data-fmt="brl">R$ 0,00</b></div>
       <div class="r"><span style="opacity:.7">Maior gasto</span><span>Moradia</span></div>
     </div>
-    <div class="wave-m"><img src="download.webp" alt="Mascote do DinnZap acenando" width="560" height="391"></div>
+    <div class="wave-m"><img fetchpriority="high" src="download.webp" alt="Mascote do DinnZap acenando" width="560" height="391"></div>
   </div>
 </header>
 
@@ -424,7 +416,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 </div></section>
 
 <section class="final" id="final">
-  <img src="download.webp" alt="" width="560" height="391">
+  <img src="download.webp" alt="" width="560" height="391" loading="lazy" decoding="async">
   <h2 data-split>Sua próxima mensagem pode organizar o seu mês.</h2>
   <p class="lead">Contas, cartões, metas e relatórios. Tudo num só lugar.</p>
   <a class="cta solid" href="https://dinn-zap.vercel.app/login">Começar agora <i>→</i></a>
@@ -438,10 +430,6 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 const esc=t=>t.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-/* splash */
-const sp=$('#splash');
-$('#letters').innerHTML=[...'DinnZap'].map((c,i)=>`<span style="animation-delay:${i*.07}s;${i>3?'color:#34D399':''}">${c}</span>`).join('');
-const hide=()=>sp.classList.add('out');sp.addEventListener('click',hide);setTimeout(hide,RM?0:1400);
 
 /* nav e menu */
 const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>30),{passive:true});
@@ -468,12 +456,12 @@ $$('.rv,[data-split]').forEach(el=>io.observe(el));
 /* hero: barras, chat e resumo */
 const H=[30,48,40,62,55,80,70,95,60,85,100,72,58,90,66,50,78,88,64,96,70,84,52,74,92,60,80,98];
 $('#bars').innerHTML=H.map(()=>'<i></i>').join('');
-setTimeout(()=>$$('#bars i').forEach((b,i)=>setTimeout(()=>b.style.height=H[i]+'%',RM?0:i*35)),RM?0:1300);
-setTimeout(()=>$$('.resumo [data-count]').forEach(count),RM?0:1600);
+setTimeout(()=>$$('#bars i').forEach((b,i)=>setTimeout(()=>b.style.height=H[i]+'%',RM?0:i*35)),RM?0:300);
+setTimeout(()=>$$('.resumo [data-count]').forEach(count),RM?0:500);
 const HC=[['u','gastei 62 na farmácia'],['a','Anotado: <b>R$ 62,00</b> em Saúde, no Nubank.'],['u','58,90 no ifood'],['a','Anotado: <b>R$ 58,90</b> em Alimentação.'],['u','recebi 3.200 do freela'],['a','Receita anotada: <b>R$ 3.200,00</b> em Renda extra 🎉'],['u','quanto sobrou?'],['a','Este mês sobraram <b>R$ 12.116,47</b>. Você está indo bem!']];
 const hc=$('#heroChat');let hi=0;
 const tick=()=>{if(hi>=HC.length){hc.innerHTML='';hi=0}const [w,t]=HC[hi++];const d=document.createElement('div');d.className='b '+w;d.innerHTML=t+`<em>10:${15+hi}</em>`;hc.appendChild(d);while(hc.scrollHeight>hc.clientHeight&&hc.children.length>1)hc.firstChild.remove();setTimeout(tick,RM?3000:(w==='u'?900:1700))};
-setTimeout(tick,RM?0:1500);
+setTimeout(tick,RM?0:600);
 
 /* painel inclinado que endireita ao rolar */
 const dash=$('#dash'),mine=$('#mine');
