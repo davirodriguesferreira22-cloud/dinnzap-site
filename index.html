@@ -6,7 +6,7 @@
 <title>DinnZap · finanças pessoais</title>
 <meta name="description" content="Seu dinheiro organizado numa mensagem. O DinnZap lança, organiza e mostra tudo no computador e no celular.">
 <meta name="theme-color" content="#1F3A2C">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="https://dinn-zap.vercel.app/mascote/icone.webp"><link rel="preconnect" href="https://dinn-zap.vercel.app"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* VOICE: assistente financeiro calmo e direto — "é só mandar uma mensagem".
@@ -107,6 +107,26 @@ p{margin:0}
 .wave-m{display:none}
 .trend{top:60%}.bars{gap:5px;height:140px}
 .s2{padding:80px 0 50px}.s3{padding:90px 0 80px}.s4in{padding:90px 0}.s5,.s6,.s7{padding:90px 0}.persp{margin-top:34px}}
+/* imagens do app */
+.logo img{border-radius:9px;flex:none;transition:transform .4s}.logo:hover img{transform:rotate(-10deg)}
+.acc .bl{width:24px;height:24px;border-radius:7px;flex:none;object-fit:contain}
+.ml{width:14px;height:14px;border-radius:4px;display:inline-block;vertical-align:-3px;margin-right:4px}
+.clogo{height:22px;width:auto;max-width:70px;object-fit:contain}.clogo.sq{border-radius:6px;height:24px}
+.tvm{position:absolute;right:-6px;bottom:-14px;width:96px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));transition:transform .4s}
+.tc:hover .tvm{transform:translateY(-6px) rotate(-4deg)}
+.dmeta{position:absolute;left:0;bottom:-10px;width:190px;z-index:3;filter:drop-shadow(0 18px 26px rgba(0,0,0,.4));animation:bob 4s ease-in-out infinite}
+.lwrap{position:relative}
+.wmz{position:absolute;left:calc(50% - 300px);bottom:40px;width:190px;z-index:3;filter:drop-shadow(0 20px 30px rgba(19,36,26,.35));animation:bob 3.8s ease-in-out infinite}
+.wbub{left:calc(50% - 290px);right:auto;top:auto;bottom:240px;z-index:4}
+.banks{margin-top:46px;text-align:center}
+.banks p{color:var(--mute);font-size:14px;margin-bottom:14px}
+.bmq{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.btrack{display:flex;gap:14px;width:max-content;animation:mq 34s linear infinite}
+.bk1{width:62px;height:62px;border-radius:18px;background:#fff;display:grid;place-items:center;flex:none;box-shadow:0 10px 20px -10px rgba(0,0,0,.5);transition:transform .3s}
+.bk1.dark{background:#121212}
+.bk1 img{width:40px;height:40px;object-fit:contain}
+.bk1:hover{transform:translateY(-4px) scale(1.06)}
+@media(max-width:860px){.wmz{left:-6px;width:120px;bottom:20px}.wbub{left:4px;bottom:140px;font-size:13px}.dmeta{width:130px;left:-10px}}
 /* divisão das seções: cartões empilhados */
 .s2,.s3,.s4,.s5,.s6,.s7,.final{position:relative;border-radius:44px 44px 0 0;margin-top:-44px;box-shadow:0 -28px 60px -24px rgba(0,0,0,.45)}
 .s2,.s6,.final{background:#1F3A2C}
@@ -307,7 +327,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 
 
 <div class="nav-w"><nav class="nav" id="nav" aria-label="Principal">
-  <a class="logo" href="#topo"><svg width="32" height="32"><use href="#lg"/></svg><span>Dinn<b>Zap</b></span></a>
+  <a class="logo" href="#topo"><img src="https://dinn-zap.vercel.app/logo.svg" width="32" height="32" alt=""><span>Dinn<b>Zap</b></span></a>
   <div class="links"><a href="#como">Como funciona</a><a href="#pedir">O que pedir</a><a href="#recursos">Funcionalidades</a><a href="#computador">No computador</a><a href="#planos">Planos</a><a href="#perguntas">Perguntas</a></div>
   <a class="cta solid" href="https://dinn-zap.vercel.app/login">Começar agora <i>→</i></a>
   <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -337,7 +357,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
       <div class="r"><span>Saldo</span><b style="color:var(--seta)" data-count="12116.47" data-fmt="brl">R$ 0,00</b></div>
       <div class="r"><span style="opacity:.7">Maior gasto</span><span>Moradia</span></div>
     </div>
-    <div class="wave-m"><span class="hi">Oi! <b>👋</b></span><img fetchpriority="high" src="download.webp" alt="Mascote do DinnZap acenando" width="560" height="391"></div>
+    <div class="wave-m"><span class="hi">Oi! <b>👋</b></span><img fetchpriority="high" src="https://dinn-zap.vercel.app/mascote/nuvem.webp" alt="Mascote do DinnZap acenando" width="560" height="391"></div>
   </div>
 </header>
 
@@ -345,6 +365,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
   <div class="center rv"><span class="sec-tag">Como funciona</span><h2 data-split>Perdeu a conta de onde foi parar o dinheiro?</h2>
     <p class="lead" style="margin-top:16px">Mande uma mensagem e veja tudo organizado no computador: saldos, contas, faturas e para onde o dinheiro foi.</p>
     <a class="cta" style="margin-top:22px" href="https://dinn-zap.vercel.app/login">Começar agora <i>→</i></a></div>
+  <div class="banks rv"><p>Cadastre contas e cartões de qualquer banco</p><div class="bmq"><div class="btrack"><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/nubank.svg" alt="Nubank" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/itau.svg" alt="Itaú" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/inter.svg" alt="Inter" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/bradesco.svg" alt="Bradesco" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/caixa.svg" alt="Caixa" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/bb.svg" alt="Banco do Brasil" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/santander.svg" alt="Santander" loading="lazy"></span><span class="bk1 dark"><img src="https://dinn-zap.vercel.app/bancos/c6.svg" alt="C6 Bank" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/btg.svg" alt="BTG Pactual" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/picpay.svg" alt="PicPay" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/mercadopago.svg" alt="Mercado Pago" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/pagbank.svg" alt="PagBank" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/sicredi.svg" alt="Sicredi" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/nubank.svg" alt="Nubank" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/itau.svg" alt="Itaú" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/inter.svg" alt="Inter" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/bradesco.svg" alt="Bradesco" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/caixa.svg" alt="Caixa" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/bb.svg" alt="Banco do Brasil" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/santander.svg" alt="Santander" loading="lazy"></span><span class="bk1 dark"><img src="https://dinn-zap.vercel.app/bancos/c6.svg" alt="C6 Bank" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/btg.svg" alt="BTG Pactual" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/picpay.svg" alt="PicPay" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/mercadopago.svg" alt="Mercado Pago" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/pagbank.svg" alt="PagBank" loading="lazy"></span><span class="bk1"><img src="https://dinn-zap.vercel.app/bancos/sicredi.svg" alt="Sicredi" loading="lazy"></span></div></div></div>
   <div class="persp"><div class="dash" id="dash"><div class="app">
     <div class="side"><div class="lg"><svg width="24" height="24"><use href="#lg"/></svg>DinnZap</div><div class="nb">+ Novo lançamento</div>
       <span class="a">Início</span><span>Lançamentos</span><span>Contas e cartões</span><span>Orçamento</span><span>Metas</span><span>Dívidas</span><span>Relatórios</span><span>Contas fixas</span><span>Configurações</span>
@@ -355,7 +376,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
       <div class="mg">
         <div class="mine" id="mine"><div style="display:flex;justify-content:space-between;font-size:12px"><b>Minhas contas →</b><span style="opacity:.75">Previsto até 30/11: R$ 15.935,97</span></div>
           <small style="opacity:.75">Saldo atual</small><div class="big">R$ 16.302,26</div>
-          <div class="accs"><div class="acc"><i class="nu"></i>Nubank<b>R$ 2.897,86</b></div><div class="acc"><i class="it"></i>Itaú<b>R$ 5.500,78</b></div><div class="acc"><i style="background:#fbbf24"></i>Carteira<b>R$ 845,22</b></div><div class="acc"><i style="background:#34D399"></i>Investimentos<b>R$ 6.958,40</b></div></div>
+          <div class="accs"><div class="acc"><img class="bl" src="https://dinn-zap.vercel.app/bancos/nubank.svg" alt="">Nubank<b>R$ 2.897,86</b></div><div class="acc"><img class="bl" src="https://dinn-zap.vercel.app/bancos/itau.svg" alt="">Itaú<b>R$ 5.500,78</b></div><div class="acc"><i style="background:#fbbf24"></i>Carteira<b>R$ 845,22</b></div><div class="acc"><i style="background:#34D399"></i>Investimentos<b>R$ 6.958,40</b></div></div>
           <div class="acts"><span>+ Nova receita</span><span>↗ Nova despesa</span><span>⇄ Transferir</span></div></div>
         <div class="pn"><div style="display:flex;justify-content:space-between"><b>Fluxo de caixa</b><small style="color:#6b776f">Nov 2026</small></div><div class="cols" id="flow"></div><div style="display:flex;justify-content:space-between;font-size:11px;color:#6b776f;margin-top:6px"><span>Entradas R$ 7.400</span><span>Saídas R$ 6.143</span></div></div>
       </div>
@@ -376,9 +397,10 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
   <div class="dvis">
     <div class="mini"><div class="scr"><div class="isl" style="width:70px;height:18px"></div>
       <div class="mtop">Boa noite, Mariana<br><span style="opacity:.75">Saldo total</span><div class="bal">R$ 16.302,26</div></div>
-      <div class="mcards"><div class="nu"><span>Nubank</span><b>R$ 2.897</b></div><div class="it"><span>Itaú</span><b>R$ 5.500</b></div></div>
+      <div class="mcards"><div class="nu"><span><img class="ml" src="https://dinn-zap.vercel.app/bancos/nubank.svg" alt="">Nubank</span><b>R$ 2.897</b></div><div class="it"><span><img class="ml" src="https://dinn-zap.vercel.app/bancos/itau.svg" alt="">Itaú</span><b>R$ 5.500</b></div></div>
       <div class="mlist"><div><span>Almoço</span><b style="color:#d9503f">− R$ 32,00</b></div><div><span>Meta Casa</span><b style="color:#059669">+ R$ 50,00</b></div><div><span>Conta de luz</span><b style="color:#d9503f">− R$ 100,00</b></div><div><span>Salário</span><b style="color:#059669">+ R$ 4.500</b></div></div>
     </div></div>
+    <img class="dmeta" src="https://dinn-zap.vercel.app/mascote/metas.webp" alt="Mascote do DinnZap com a meta batida" width="485" height="440" loading="lazy">
     <div class="ntf"><span class="ti">🔔</span><div><b>DinnZap</b><small>A conta de luz vence hoje: R$ 100,00</small></div></div>
   </div>
 </div></div></section>
@@ -398,7 +420,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
     </div>
     <p style="margin-top:16px;font-size:13px;color:#55625a">Voz e texto já funcionam no app · pelo WhatsApp <span class="soon">em breve</span></p>
   </div>
-  <div class="rv"><div class="lph"><div class="scr"><div class="isl"></div>
+  <div class="rv lwrap"><img class="wmz" src="https://dinn-zap.vercel.app/mascote/whatsapp.webp" alt="Mascote do DinnZap mandando mensagem" width="445" height="440" loading="lazy"><span class="hi wbub">Manda aí! <b>💬</b></span><div class="lph"><div class="scr"><div class="isl"></div>
     <div class="wa-top"><svg width="30" height="30"><use href="#lg"/></svg><div><b>DinnZap</b><small style="color:#059669">online</small></div></div>
     <div class="wa" id="lchat"><div class="b a">Oi! Me conta um gasto ou pergunta alguma coisa sobre seu dinheiro 💚<em>09:12</em></div></div>
     <div class="wa-in">Mensagem<i><svg width="14" height="14"><use href="#snd"/></svg></i></div>
@@ -409,15 +431,15 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
   <div class="center rv"><span class="sec-tag">Funcionalidades</span><h2 data-split>Saiba exatamente para onde vai o seu dinheiro, sem somar fatura na mão.</h2></div>
   <div class="tri">
     <div class="tc rv"><div class="tv"><div class="stk">
-      <div class="cd bk"><div style="display:flex;justify-content:space-between"><span class="chipi"></span><b>Black</b></div><span>•••• 1209</span></div>
-      <div class="cd it"><div style="display:flex;justify-content:space-between"><span class="chipi"></span><b>Itaú</b></div><span>•••• 3307</span></div>
-      <div class="cd nu"><div style="display:flex;justify-content:space-between"><span class="chipi"></span><b>Nubank</b></div><div style="display:flex;justify-content:space-between;align-items:end"><span>Fatura<br><b style="font-size:14px">R$ 1.180,00</b></span><span>dia 10</span></div></div>
+      <div class="cd bk"><div style="display:flex;justify-content:space-between"><span class="chipi"></span><img class="clogo" src="https://dinn-zap.vercel.app/bancos/c6.svg" alt="C6 Bank"></div><span>C6 Bank •••• 1209</span></div>
+      <div class="cd it"><div style="display:flex;justify-content:space-between"><span class="chipi"></span><img class="clogo sq" src="https://dinn-zap.vercel.app/bancos/itau.svg" alt="Itaú"></div><span>Itaú •••• 3307</span></div>
+      <div class="cd nu"><div style="display:flex;justify-content:space-between"><span class="chipi"></span><img class="clogo sq" src="https://dinn-zap.vercel.app/bancos/nubank.svg" alt="Nubank"></div><div style="display:flex;justify-content:space-between;align-items:end"><span>Fatura<br><b style="font-size:14px">R$ 1.180,00</b></span><span>dia 10</span></div></div>
     </div></div><h3>Todos os seus cartões e contas num só lugar.</h3><p>Nubank, Itaú, Inter, Caixa… Cada conta com saldo, cada cartão com fatura e limite.</p></div>
     <div class="tc rv"><div class="tv"><div><div class="cats">
       <div class="cat"><i style="background:#1c2f24">🛒</i><b>R$ 107,40</b>Mercado</div>
       <div class="cat"><i style="background:#ea1d2c">🍔</i><b>R$ 58,90</b>Alimentação</div>
       <div class="cat"><i style="background:#2b3a32">⛽</i><b>R$ 120,00</b>Transporte</div>
-    </div><div class="tags"><span>Pix</span><span>Crédito</span><span>Débito</span></div></div></div><h3>Cada gasto já entra na categoria certa.</h3><p>Falou "58,90 no lanche"? O DinnZap lança em Alimentação, sem você escolher nada.</p></div>
+    </div><div class="tags"><span>Pix</span><span>Crédito</span><span>Débito</span></div></div><img class="tvm" src="https://dinn-zap.vercel.app/mascote/categorias.webp" alt="" width="447" height="440" loading="lazy"></div><h3>Cada gasto já entra na categoria certa.</h3><p>Falou "58,90 no lanche"? O DinnZap lança em Alimentação, sem você escolher nada.</p></div>
     <div class="tc rv"><div class="tv"><div class="cbox">
       <div class="b u" style="align-self:flex-end">quanto gastei esse mês?</div>
       <div class="b a">Foram <b>R$ 296,00</b>. Moradia lidera com 34%.</div>
@@ -469,12 +491,12 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 </div></section>
 
 <section class="final" id="final">
-  <div class="mz"><span class="hi">Te espero lá! <b>👋</b></span><img src="download.webp" alt="" width="560" height="391" loading="lazy" decoding="async"></div>
+  <div class="mz"><span class="hi">Te espero lá! <b>👋</b></span><img src="https://dinn-zap.vercel.app/mascote/dinn-nuvem.webp" alt="Mascote do DinnZap" width="360" height="300" loading="lazy" decoding="async"></div>
   <h2 data-split>Sua próxima mensagem pode organizar o seu mês.</h2>
   <p class="lead">Contas, cartões, metas e relatórios. Tudo num só lugar.</p>
   <a class="cta solid" href="https://dinn-zap.vercel.app/login">Começar agora <i>→</i></a>
 </section>
-<footer><div class="wrap"><a class="logo" href="#topo" style="font-size:16px"><svg width="26" height="26"><use href="#lg"/></svg><span>Dinn<b>Zap</b></span></a><span>© 2026 DinnZap · finanças pessoais</span><div class="fl"><a href="https://dinn-zap.vercel.app/login">Entrar</a><a href="#planos">Planos</a><a href="#perguntas">Perguntas</a></div></div></footer>
+<footer><div class="wrap"><a class="logo" href="#topo" style="font-size:16px"><img src="https://dinn-zap.vercel.app/logo.svg" width="26" height="26" alt=""><span>Dinn<b>Zap</b></span></a><span>© 2026 DinnZap · finanças pessoais</span><div class="fl"><a href="https://dinn-zap.vercel.app/login">Entrar</a><a href="#planos">Planos</a><a href="#perguntas">Perguntas</a></div></div></footer>
 
 <script>
 {
