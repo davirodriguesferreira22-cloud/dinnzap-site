@@ -18,7 +18,7 @@
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px;overflow-x:clip}
 body{margin:0;background:var(--g2);color:var(--ink);font:16px/1.6 "Plus Jakarta Sans",system-ui,sans-serif;overflow-x:clip}
-a{color:inherit}img{max-width:100%;display:block}
+a{color:inherit}img{max-width:100%;height:auto;display:block}
 h1,h2,h3{margin:0;line-height:1.06;letter-spacing:-.035em;text-wrap:balance}
 h1{font-size:clamp(38px,5.8vw,72px);font-weight:700}
 h2{font-size:clamp(30px,4.2vw,52px);font-weight:700}
@@ -84,11 +84,19 @@ p{margin:0}
 .resumo{position:absolute;right:0;top:120px;width:220px;background:rgba(19,40,29,.82);border:1px solid var(--line);border-radius:18px;padding:14px;backdrop-filter:blur(10px);font-size:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);animation:bob 5s ease-in-out infinite}
 .resumo .r{display:flex;justify-content:space-between;padding:5px 0;border-top:1px solid rgba(255,255,255,.07)}.resumo .r:first-of-type{border:0}
 .resumo b{white-space:nowrap}
-.toast2{position:absolute;left:0;top:60px;width:210px;background:#fff;color:#13241a;border-radius:16px;padding:11px 13px;font-size:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:flex;gap:10px;align-items:center;animation:bob 4.4s ease-in-out infinite;animation-delay:-2s}
+.toast2{position:absolute;left:0;top:10px;width:210px;background:#fff;color:#13241a;border-radius:16px;padding:11px 13px;font-size:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:flex;gap:10px;align-items:center;animation:bob 4.4s ease-in-out infinite;animation-delay:-2s}
 .toast2 small{display:block;color:#6b776f;font-size:11px}
 .ti{width:32px;height:32px;border-radius:10px;flex:none;background:linear-gradient(145deg,#6ee7b7,#059669);display:grid;place-items:center;color:#fff;font-weight:800}
-.wave-m{position:absolute;left:calc(50% - 300px);bottom:-30px;width:250px;z-index:4;filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));animation:peek 1.2s .4s cubic-bezier(.2,.9,.3,1.2) both}
-.wave-m img{animation:hand 2.8s 1.6s ease-in-out infinite;transform-origin:70% 90%}
+.wave-m{position:absolute;left:calc(50% - 370px);top:120px;width:250px;z-index:4;filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));animation:peek 1.2s .4s cubic-bezier(.2,.9,.3,1.2) both}
+.wave-m img,.final .mz img{animation:tchau 3.2s 1.6s ease-in-out infinite;transform-origin:50% 92%}
+@keyframes tchau{0%,55%,100%{transform:rotate(0) translateY(0)}8%{transform:rotate(-9deg) translateY(-6px)}16%{transform:rotate(8deg) translateY(-8px)}24%{transform:rotate(-8deg) translateY(-6px)}32%{transform:rotate(7deg) translateY(-4px)}40%{transform:rotate(-4deg)}48%{transform:rotate(2deg)}}
+.hi{position:absolute;top:-6px;right:-26px;background:#fff;color:#13241a;font-weight:800;font-size:15px;padding:9px 14px;border-radius:18px 18px 18px 4px;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);white-space:nowrap;transform-origin:0 100%;animation:hipop 3.2s 1.6s ease-in-out infinite;z-index:2}
+.hi b{display:inline-block;transform-origin:70% 80%;animation:wavehand 3.2s 1.6s ease-in-out infinite}
+@keyframes hipop{0%,60%,100%{transform:scale(1)}6%{transform:scale(1.12)}12%{transform:scale(1)}}
+@keyframes wavehand{0%,50%,100%{transform:rotate(0)}6%,18%,30%{transform:rotate(22deg)}12%,24%,36%{transform:rotate(-12deg)}}
+.final .mz{position:relative;width:min(240px,60%);margin:0 auto 18px;z-index:1}
+.final .mz .hi{top:-4px;right:-40px}
+.wave-m .hi{right:auto;left:0;top:-34px}
 @keyframes peek{from{transform:translateY(160px)}to{transform:none}}
 @keyframes hand{0%,100%{transform:rotate(0)}20%{transform:rotate(-6deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-3deg)}}
 @media(max-width:760px){.hero{min-height:0;padding:100px 0 60px}.hero h1{font-size:clamp(32px,9vw,40px)}
@@ -280,7 +288,7 @@ summary::after{content:"+";position:absolute;right:0;top:12px;width:30px;height:
 details[open] summary::after{transform:rotate(45deg);background:var(--seta);color:#0b2318}
 details p{padding:0 0 18px;color:var(--mute)}
 .final{text-align:center;padding:110px 24px 120px;overflow:hidden}
-.final img{width:min(220px,58%);margin:0 auto 14px;animation:bob 3.6s ease-in-out infinite;position:relative;z-index:1}
+.final .mz img{width:100%;margin:0}
 .final h2,.final p,.final a{position:relative;z-index:1}
 .final .lead{margin:14px auto 26px}
 .coin{position:absolute;top:-40px;width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe9a3,#e8b13a 55%,#b9821c);display:grid;place-items:center;color:#8a5e10;font-weight:800;font-size:12px;animation:fall linear infinite;opacity:.55;z-index:0}
@@ -329,7 +337,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
       <div class="r"><span>Saldo</span><b style="color:var(--seta)" data-count="12116.47" data-fmt="brl">R$ 0,00</b></div>
       <div class="r"><span style="opacity:.7">Maior gasto</span><span>Moradia</span></div>
     </div>
-    <div class="wave-m"><img fetchpriority="high" src="download.webp" alt="Mascote do DinnZap acenando" width="560" height="391"></div>
+    <div class="wave-m"><span class="hi">Oi! <b>👋</b></span><img fetchpriority="high" src="download.webp" alt="Mascote do DinnZap acenando" width="560" height="391"></div>
   </div>
 </header>
 
@@ -461,7 +469,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 </div></section>
 
 <section class="final" id="final">
-  <img src="download.webp" alt="" width="560" height="391" loading="lazy" decoding="async">
+  <div class="mz"><span class="hi">Te espero lá! <b>👋</b></span><img src="download.webp" alt="" width="560" height="391" loading="lazy" decoding="async"></div>
   <h2 data-split>Sua próxima mensagem pode organizar o seu mês.</h2>
   <p class="lead">Contas, cartões, metas e relatórios. Tudo num só lugar.</p>
   <a class="cta solid" href="https://dinn-zap.vercel.app/login">Começar agora <i>→</i></a>
