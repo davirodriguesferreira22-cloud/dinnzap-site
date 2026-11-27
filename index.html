@@ -58,7 +58,7 @@ p{margin:0}
 .mm.open{display:grid;gap:2px;position:absolute;left:max(5vw,18px);right:max(5vw,18px);top:66px;padding:10px;border-radius:22px;background:rgba(24,48,36,.97);border:1px solid var(--line)}
 .mm a{padding:14px 16px;border-radius:14px;text-decoration:none;font-weight:600}.mm a:hover{background:rgba(255,255,255,.08)}}
 /* hero */
-.hero{position:relative;min-height:100vh;padding:112px 0 0;overflow:hidden;background:radial-gradient(90% 70% at 50% 30%,#3a9a66 0%,var(--g2) 55%,#256a46 100%)}
+.hero{position:relative;min-height:100vh;padding:112px 0 44px;overflow:hidden;background:radial-gradient(90% 70% at 50% 30%,#3a9a66 0%,var(--g2) 55%,#256a46 100%)}
 .hero h1{margin:16px auto 14px;max-width:15ch;font-size:clamp(36px,5vw,62px)}
 .hero .lead{margin:0 auto 22px}
 .bars{position:absolute;left:0;right:0;bottom:0;height:260px;display:flex;align-items:flex-end;gap:10px;padding:0 2vw;pointer-events:none;mask-image:linear-gradient(90deg,#000 0,#000 20%,transparent 38%,transparent 62%,#000 80%)}
@@ -91,9 +91,23 @@ p{margin:0}
 .wave-m img{animation:hand 2.8s 1.6s ease-in-out infinite;transform-origin:70% 90%}
 @keyframes peek{from{transform:translateY(160px)}to{transform:none}}
 @keyframes hand{0%,100%{transform:rotate(0)}20%{transform:rotate(-6deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-3deg)}}
-@media(max-width:760px){.resumo{right:-6px;top:auto;bottom:30px;width:170px;padding:10px;font-size:11px}.toast2{left:12px;top:-8px;width:176px;z-index:5}.wave-m{left:-46px;width:140px;bottom:-6px}.hstage{height:470px}.bars{gap:5px;height:160px}}
+@media(max-width:760px){.hero{min-height:0;padding:100px 0 60px}.hero h1{font-size:clamp(32px,9vw,40px)}
+.hstage{height:auto;display:flex;flex-direction:column;align-items:center;margin-top:22px;padding:0 18px}
+.phone{position:relative;left:auto;transform:none;width:236px;height:430px;border-radius:38px}
+.toast2{display:none}
+.resumo{position:relative;right:auto;top:auto;width:100%;max-width:300px;margin-top:-70px;z-index:5;animation:none;font-size:12px}
+.wave-m{display:none}
+.trend{top:60%}.bars{gap:5px;height:140px}
+.s2{padding:80px 0 50px}.s3{padding:90px 0 80px}.s4in{padding:90px 0}.s5,.s6,.s7{padding:90px 0}.persp{margin-top:34px}}
+/* divisão das seções: cartões empilhados */
+.s2,.s3,.s4,.s5,.s6,.s7,.final{position:relative;border-radius:44px 44px 0 0;margin-top:-44px;box-shadow:0 -28px 60px -24px rgba(0,0,0,.45)}
+.s2,.s6,.final{background:#1F3A2C}
+.s4{overflow:clip}
+.sec-tag{display:inline-block;font-size:13px;font-weight:700;color:var(--seta);letter-spacing:.02em;margin-bottom:14px}
+.s4 .sec-tag{color:#059669}
+@media(max-width:760px){.s2,.s3,.s4,.s5,.s6,.s7,.final{border-radius:28px 28px 0 0;margin-top:-28px}}
 /* seção painel */
-.s2{position:relative;background:var(--g2);padding:110px 0 70px;overflow:hidden}
+.s2{position:relative;background:#1F3A2C;padding:110px 0 70px;overflow:hidden}
 .persp{perspective:1400px;margin-top:50px}
 .dash{transform-origin:50% 0;transform:rotateX(28deg) scale(.88);transition:transform .1s linear;max-width:1080px;margin:0 auto;border-radius:22px;background:#0f1e16;padding:10px;box-shadow:0 60px 120px -40px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.12)}
 .app{display:grid;grid-template-columns:200px minmax(0,1fr);background:#f4f6f3;color:#13241a;border-radius:14px;overflow:hidden;font-size:13px;min-height:520px}
@@ -130,7 +144,7 @@ p{margin:0}
 .st svg{color:var(--seta);flex:none}
 @keyframes mq{to{transform:translateX(-50%)}}
 /* um dia comum */
-.s3{padding:60px 0 110px;background:var(--g2)}
+.s3{padding:120px 0 110px;background:var(--g2)}
 .day{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:30px;align-items:center;border-radius:32px;padding:clamp(24px,4vw,52px);background:linear-gradient(150deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid var(--line);position:relative}
 .tl{margin-top:26px;display:grid;gap:4px;position:relative}
 .tl::before{content:"";position:absolute;left:52px;top:10px;bottom:10px;width:2px;background:rgba(255,255,255,.12)}
@@ -202,13 +216,13 @@ p{margin:0}
 .cbars div{flex:1;text-align:center;font-size:9.5px}.cbars i{display:block;border-radius:5px 5px 0 0;background:#a7f3d0;height:0;transition:height 1.2s cubic-bezier(.2,.8,.2,1);margin-bottom:4px}
 .cbars div:last-child i{background:var(--seta)}
 /* tela grande */
-.s6{padding:40px 0 110px;background:var(--g2)}
-.big{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:40px;align-items:center;border-radius:32px;padding:clamp(24px,4vw,52px);background:#1F3A2C;border:1px solid var(--line);overflow:hidden}
+.s6{padding:110px 0}
+.bigs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:40px;align-items:center;border-radius:32px;padding:clamp(24px,4vw,52px);background:rgba(255,255,255,.05);border:1px solid var(--line);overflow:hidden}
 .lap{position:relative}
 .lid{background:#0b1912;border-radius:16px 16px 0 0;padding:10px;border:2px solid #31503f;border-bottom:0}
 .lid .app{min-height:300px;grid-template-columns:120px minmax(0,1fr);font-size:10px}.lid .side{font-size:10px;padding:10px 8px}.lid .main{padding:12px;gap:8px}.lid .k b{font-size:13px}.lid .k{padding:9px}
 .base{height:14px;background:linear-gradient(#3a5a48,#1d3327);border-radius:0 0 16px 16px;margin:0 -5%}
-@media(max-width:900px){.big{grid-template-columns:minmax(0,1fr)}.lid .side{display:none}.lid .app{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:900px){.bigs{grid-template-columns:minmax(0,1fr)}.lid .side{display:none}.lid .app{grid-template-columns:minmax(0,1fr)}}
 /* planos e faq */
 .s7{padding:110px 0;background:radial-gradient(80% 50% at 50% 0%,#35905f,var(--g2) 60%)}
 .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin:44px auto 0}
@@ -237,7 +251,7 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"+";position:absolute;right:0;top:12px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:20px;font-weight:400;transition:transform .3s}
 details[open] summary::after{transform:rotate(45deg);background:var(--seta);color:#0b2318}
 details p{padding:0 0 18px;color:var(--mute)}
-.final{position:relative;text-align:center;padding:110px 24px 120px;background:#1F3A2C;overflow:hidden}
+.final{text-align:center;padding:110px 24px 120px;overflow:hidden}
 .final img{width:min(220px,58%);margin:0 auto 14px;animation:bob 3.6s ease-in-out infinite;position:relative;z-index:1}
 .final h2,.final p,.final a{position:relative;z-index:1}
 .final .lead{margin:14px auto 26px}
@@ -292,7 +306,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 </header>
 
 <section class="s2" id="como"><div class="wrap">
-  <div class="center rv"><h2 data-split>Perdeu a conta de onde foi parar o dinheiro?</h2>
+  <div class="center rv"><span class="sec-tag">Como funciona</span><h2 data-split>Perdeu a conta de onde foi parar o dinheiro?</h2>
     <p class="lead" style="margin-top:16px">Mande uma mensagem e veja tudo organizado no computador: saldos, contas, faturas e para onde o dinheiro foi.</p>
     <a class="cta" style="margin-top:22px" href="https://dinn-zap.vercel.app/login">Começar agora <i>→</i></a></div>
   <div class="persp"><div class="dash" id="dash"><div class="app">
@@ -315,7 +329,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 </div></section>
 
 <section class="s3"><div class="wrap"><div class="day rv" id="day">
-  <div><h2 data-split>Um dia comum. Só que com o dinheiro no lugar.</h2>
+  <div><span class="sec-tag">No dia a dia</span><h2 data-split>Um dia comum. Só que com o dinheiro no lugar.</h2>
     <div class="tl" id="tl">
       <div class="ev"><time>07:40</time><i></i><div><b>O aviso da conta de luz chega antes do café.</b><p class="lead" style="font-size:14px">Contas fixas aparecem no Início e no sino 🔔.</p></div></div>
       <div class="ev"><time>12:30</time><i></i><div><b>Almoçou? Fala "gastei 32 no almoço" e está lançado.</b><p class="lead" style="font-size:14px">Categoria e conta escolhidas sozinhas.</p></div></div>
@@ -335,6 +349,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 
 <section class="s4" id="pedir"><div class="wrap s4in">
   <div class="stick rv">
+    <span class="sec-tag">O que pedir</span>
     <h2 data-split>Se você sabe mandar uma mensagem, já sabe usar o DinnZap.</h2>
     <p class="lead" style="margin-top:16px">Escreva ou fale do seu jeito. Toque num exemplo e veja a resposta no celular.</p>
     <div class="ex" id="ex">
@@ -355,7 +370,7 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
 </div></section>
 
 <section class="s5"><div class="wrap">
-  <div class="center rv"><h2 data-split>Saiba exatamente para onde vai o seu dinheiro, sem somar fatura na mão.</h2></div>
+  <div class="center rv"><span class="sec-tag">Funcionalidades</span><h2 data-split>Saiba exatamente para onde vai o seu dinheiro, sem somar fatura na mão.</h2></div>
   <div class="tri">
     <div class="tc rv"><div class="tv"><div class="stk">
       <div class="cd bk"><div style="display:flex;justify-content:space-between"><span class="chipi"></span><b>Black</b></div><span>•••• 1209</span></div>
@@ -375,8 +390,8 @@ footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}footer .fl{
   </div>
 </div></section>
 
-<section class="s6" id="computador"><div class="wrap"><div class="big rv">
-  <div><h2 data-split>Quer ver tudo em tela grande? Abra o DinnZap no computador.</h2>
+<section class="s6" id="computador"><div class="wrap"><div class="bigs rv">
+  <div><span class="sec-tag">No computador</span><h2 data-split>Quer ver tudo em tela grande? Abra o DinnZap no computador.</h2>
     <p class="lead" style="margin-top:16px">O mesmo app no celular e no notebook. Menu lateral, relatórios de qualquer período e planilha CSV pra baixar.</p>
     <a class="cta solid" style="margin-top:22px" href="https://dinn-zap.vercel.app/login">Abrir no computador <i>→</i></a></div>
   <div class="lap"><div class="lid"><div class="app">
